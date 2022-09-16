@@ -2,7 +2,7 @@
  * @Author: makunkun
  * @Date: 2022-09-08 15:10:26
  * @LastEditors: makunkun
- * @LastEditTime: 2022-09-09 11:07:48
+ * @LastEditTime: 2022-09-16 17:26:47
  * @Description: 
  * @FilePath: /express_demo/index.js
  */
@@ -22,17 +22,20 @@ const port = 9090
 
 app.get('/', (req, res) => {
   console.log('req', req)
-  res.send('Hello World!')
+  res.send('Hello World!haha')
 })
 app.get('/api/', (req, res) => {
   console.log('req', req.body)
-  res.send('Hello World!==>'+ JSON.stringify(req.body))
+  res.send('Hello World!==>'+ JSON.stringify(req.query))
 })
 app.post('/api/', (req, res) => {
   console.log('req', req.body)
   res.send('Hello World!==>'+ JSON.stringify(req.body))
 })
 
-app.listen(port, () => {
+
+app.server =app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+module.exports = app
